@@ -1,36 +1,33 @@
 
- function isValid(s) {
+function isValid(s) {
     const stack = [];
-        const mapping = {
-            '(': ')',
-            '{': '}',
-            '[': ']'
+    const bracketMap = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    };
 
-      };
-        for (let char of s) {
-
-            if (mapping[char]) {
-                stack.push(char);
-            } else {
-              
-                if (stack.length === 0 || mapping[stack.pop()] !== char) {
-                    return false;
-                }
+    for (let char of s) {
+        if (char in bracketMap) {
+            // If the current character is a closing bracket
+            const topElement = stack.pop(); // Get the last element from the stack
+            if (bracketMap[char] !== topElement) {
+                return false; // Not matching
             }
+        } else {
+            // If it’s an opening bracket, push onto stack
+            stack.push(char);
         }
-    
-   
-        return stack.length === 0;
     }
-    
 
-    let userInput = prompt("Enter a string of parentheses:");
+    // If the stack is empty, all brackets matched correctly
+    return stack.length === 0;
+}
 
-    console.log(isValid(userInput));
-    
-    
-
-
-module.exports = { isValid };
-
-
+// Example usage
+console.log(isValid("()"));       // Output: true
+console.log(isValid("()[]{}"));   // Output: true
+console.log(isValid("(]"));       // Output: false
+console.log(isValid("{[()]}"));   // Output: true
+console.log(isValid("([)]"));     // Output: false
+console.log(isValid(""));         // Output: true
