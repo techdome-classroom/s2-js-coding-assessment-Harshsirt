@@ -23,7 +23,7 @@ var isValid = function(s) {
         return stack.length === 0;
     }
     
-    // Accept input from the user
+
     let userInput = prompt("Enter a string of parentheses:");
 
     console.log(isValid(userInput));
