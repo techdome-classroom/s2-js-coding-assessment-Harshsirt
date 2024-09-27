@@ -10,7 +10,7 @@ function isValid(s) {
     for (let char of s) {
         if (char in bracketMap) {
            
-            const topElement = stack.pop(); // Get the last element from the stack
+            const topElement = stack.pop(); 
             if (bracketMap[char] !== topElement) {
                 return false; // Not matching
             }
