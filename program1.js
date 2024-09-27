@@ -19,7 +19,7 @@ var isValid = function(s) {
             }
         }
     
-        // If the stack is empty, all opening brackets were matched
+   
         return stack.length === 0;
     }
     
