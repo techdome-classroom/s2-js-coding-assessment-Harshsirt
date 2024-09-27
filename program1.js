@@ -15,7 +15,7 @@ function isValid(s) {
                 return false; // Not matching
             }
         } else {
-            // If it’s an opening bracket, push onto stack
+            
             stack.push(char);
         }
     }
