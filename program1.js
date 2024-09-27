@@ -8,7 +8,7 @@ var isValid = function(s) {
 
         };
         for (let char of s) {
-            // If the character is one of the opening brackets, push it onto the stack
+
             if (mapping[char]) {
                 stack.push(char);
             } else {
