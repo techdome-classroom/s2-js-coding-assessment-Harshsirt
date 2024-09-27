@@ -6,7 +6,7 @@ var isValid = function(s) {
             '{': '}',
             '[': ']'
 
-        };
+      };
         for (let char of s) {
 
             if (mapping[char]) {
