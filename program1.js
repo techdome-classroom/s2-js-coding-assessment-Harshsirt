@@ -7,20 +7,27 @@ var isValid = function(s) {
             '[': ']'
 
         };
-
-        for(let i = 0; i < s.length; i++) {
-            if(s[i] === "(" || s[i] === "{" || s[i] === "[") {
-                stack.push(s[i]);
+        for (let char of s) {
+            // If the character is one of the opening brackets, push it onto the stack
+            if (mapping[char]) {
+                stack.push(char);
             } else {
-                let last = stack.pop();
-                if(s[i] !== map[last]) {return false;}
+                // If the stack is empty or the top of the stack doesn't match the closing bracket, return false
+                if (stack.length === 0 || mapping[stack.pop()] !== char) {
+                    return false;
+                }
             }
         }
-        
-        if(stack.length !== 0) {return false;}
-        
-        return true;
- };
+    
+        // If the stack is empty, all opening brackets were matched
+        return stack.length === 0;
+    }
+    
+    // Accept input from the user
+    let userInput = prompt("Enter a string of parentheses:");
+    
+    // Output true or false based on whether the input string is valid
+    console.log(isValid(userInput));
     
     
 
