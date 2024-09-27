@@ -1,36 +1,35 @@
-const Solution = require('./romanToInt');
+class Solution {
+    romanToInt(s) {
+        const romanMap = {
+            'I': 1,
+            'V': 5,
+            'X': 10,
+            'L': 50,
+            'C': 100,
+            'D': 500,
+            'M': 1000
+        };
+        
+        let total = 0;
+        let prevValue = 0;
 
-describe('Roman to Integer Tests', () => {
-    let solution;
+        for (let i = s.length - 1; i >= 0; i--) {
+            const currentValue = romanMap[s[i]];
+            if (currentValue < prevValue) {
+                total -= currentValue; // Subtract if the current value is less than the previous value
+            } else {
+                total += currentValue; // Otherwise, add the current value
+            }
+            prevValue = currentValue; // Update previous value
+        }
 
-    beforeEach(() => {
-        solution = new Solution();
-    });
+        return total;
+    }
+}
 
-    test('convert III to 3', () => {
-        expect(solution.romanToInt("III")).toBe(3);
-    });
+// Export the Solution class for testing
+module.exports = Solution;
 
-    test('convert LVIII to 58', () => {
-        expect(solution.romanToInt("LVIII")).toBe(58);
-    });
-
-    test('convert MCMXCIV to 1994', () => {
-        expect(solution.romanToInt("MCMXCIV")).toBe(1994);
-    });
-
-    test('convert single roman digit X to 10', () => {
-        expect(solution.romanToInt("X")).toBe(10);
-    });
-
-    test('convert MMXXIII to 2023', () => {
-        expect(solution.romanToInt("MMXXIII")).toBe(2023);
-    });
-
-    test('convert MMMCMXCIX to 3999', () => {
-        expect(solution.romanToInt("MMMCMXCIX")).toBe(3999);
-    });
-});
 
 
 module.exports={romanToInt}
