@@ -20,7 +20,7 @@ class Solution {
             } else {
                 total += currentValue; 
             }
-            prevValue = currentValue; // Update previous value
+            prevValue = currentValue; 
         }
 
         return total;
