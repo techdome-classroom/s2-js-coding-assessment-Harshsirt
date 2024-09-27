@@ -16,8 +16,7 @@ function romanToInt(s) {
         const currentValue = romanMap[char];
         total += currentValue;
 
-        // If the previous value is less than the current value,
-        // subtract double the previous value (it was added once already)
+      
         if (prevValue < currentValue) {
             total -= 2 * prevValue;
         }
