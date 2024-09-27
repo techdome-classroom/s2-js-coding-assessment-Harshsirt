@@ -25,8 +25,7 @@ var isValid = function(s) {
     
     // Accept input from the user
     let userInput = prompt("Enter a string of parentheses:");
-    
-    // Output true or false based on whether the input string is valid
+
     console.log(isValid(userInput));
     
     
