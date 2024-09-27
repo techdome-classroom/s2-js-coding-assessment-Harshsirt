@@ -15,7 +15,7 @@ var isValid = function(s) {
             if(mapping[char]){
                 stack.push(char);
             } else{
-                
+                if
             }
         }
     
