@@ -1,5 +1,5 @@
 
-var isValid = function(s) {
+ function(s) {
     const stack = [];
         const mapping = {
             '(': ')',
