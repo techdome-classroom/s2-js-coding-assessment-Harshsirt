@@ -23,11 +23,4 @@ function isValid(s) {
     // If the stack is empty, all brackets matched correctly
     return stack.length === 0;
 }
-
-// Example usage
-console.log(isValid("()"));       // Output: true
-console.log(isValid("()[]{}"));   // Output: true
-console.log(isValid("(]"));       // Output: false
-console.log(isValid("{[()]}"));   // Output: true
-console.log(isValid("([)]"));     // Output: false
-console.log(isValid(""));         // Output: true
+module.exports = ()
