@@ -27,8 +27,6 @@ class Solution {
     }
 }
 
-// Export the Solution class for testing
-module.exports = Solution;
 
 
 
