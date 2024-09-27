@@ -16,9 +16,9 @@ class Solution {
         for (let i = s.length - 1; i >= 0; i--) {
             const currentValue = romanMap[s[i]];
             if (currentValue < prevValue) {
-                total -= currentValue; // Subtract if the current value is less than the previous value
+                total -= currentValue;
             } else {
-                total += currentValue; // Otherwise, add the current value
+                total += currentValue; 
             }
             prevValue = currentValue; // Update previous value
         }
