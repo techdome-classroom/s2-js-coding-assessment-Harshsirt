@@ -12,7 +12,7 @@ function isValid(s) {
            
             const topElement = stack.pop(); 
             if (bracketMap[char] !== topElement) {
-                return false; // Not matching
+                return false; 
             }
         } else {
             
